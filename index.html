@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TITANICISM | Titanic Survival Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav-bar" aria-label="Primary navigation">
+      <a class="brand" href="#top">TITANICISM</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#history">History</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#methods">Method</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#demo">Demo</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Descriptive and Diagnostic Analytics</p>
+        <h1>TITANICISM</h1>
+        <p class="hero-copy">
+          A data storytelling website for the Titanic passenger survival project, built from the cleaned dataset,
+          notebook findings, and historical visuals.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#analytics">Explore Findings</a>
+          <a class="button secondary" href="#demo">View Demo Flow</a>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="Project summary">
+        <article>
+          <strong>891</strong>
+          <span>Passenger records</span>
+        </article>
+        <article>
+          <strong>14</strong>
+          <span>Cleaned columns</span>
+        </article>
+        <article>
+          <strong>38.38%</strong>
+          <span>Overall survival rate</span>
+        </article>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section intro-band">
+      <div class="section-grid">
+        <div>
+          <p class="eyebrow">The Activity</p>
+          <h2>From raw passenger records to analyst-style insight.</h2>
+        </div>
+        <p>
+          This project uses Python, pandas, NumPy, matplotlib, and seaborn to clean a real-world Titanic dataset,
+          summarize survival patterns, and diagnose which passenger attributes were most associated with survival.
+        </p>
+      </div>
+    </section>
+
+    <section class="section history" id="history">
+      <div class="section-heading">
+        <p class="eyebrow">History Context</p>
+        <h2>The story behind the numbers</h2>
+        <p>
+          The dataset becomes clearer when paired with historical imagery: the ship, its officers, its departure,
+          and the evacuation conditions that shaped survival.
+        </p>
+      </div>
+
+      <div class="history-layout">
+        <article class="history-card large">
+          <img src="images/titanic_ship.jpg" alt="Black-and-white photograph of the Titanic at sea or near port.">
+          <div>
+            <h3>The Ship</h3>
+            <p>
+              The Titanic was one of the largest ocean liners of its time. In the dataset, class, fare, and cabin
+              records help us analyze how passenger position and privilege related to survival outcomes.
+            </p>
+          </div>
+        </article>
+        <article class="history-card">
+          <img src="images/titanic_commander.jpg" alt="Historical portrait of Titanic commander and officers.">
+          <div>
+            <h3>The Officers</h3>
+            <p>
+              Leadership, procedure, and evacuation decisions are part of the broader historical context,
+              although the dataset focuses mainly on passenger-level information.
+            </p>
+          </div>
+        </article>
+        <article class="history-card">
+          <img src="images/titanic_cabin_survivor.jpg" alt="Illustration of crowded lifeboats beside the Titanic at night.">
+          <div>
+            <h3>The Evacuation</h3>
+            <p>
+              The survival patterns show large differences by sex, class, fare group, and family situation.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section analytics" id="analytics">
+      <div class="section-heading">
+        <p class="eyebrow">Analytics Dashboard</p>
+        <h2>What happened, and what explains the patterns?</h2>
+        <p>
+          The charts below summarize the cleaned dataset and show survival rates across important passenger groups.
+        </p>
+      </div>
+
+      <div class="metric-row">
+        <article class="metric-card">
+          <span>Survived</span>
+          <strong>342</strong>
+          <p>Passengers survived</p>
+        </article>
+        <article class="metric-card">
+          <span>Did Not Survive</span>
+          <strong>549</strong>
+          <p>Passengers did not survive</p>
+        </article>
+        <article class="metric-card">
+          <span>Missing Values</span>
+          <strong>0</strong>
+          <p>After cleaning</p>
+        </article>
+        <article class="metric-card">
+          <span>Raw Missing Cabin</span>
+          <strong>687</strong>
+          <p>Converted into useful features</p>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="chart-panel">
+          <div class="panel-title">
+            <h3>Survival Rate by Sex</h3>
+            <span>Diagnostic</span>
+          </div>
+          <div class="bar-chart" data-chart="sex"></div>
+        </article>
+        <article class="chart-panel">
+          <div class="panel-title">
+            <h3>Survival Rate by Class</h3>
+            <span>Diagnostic</span>
+          </div>
+          <div class="bar-chart" data-chart="class"></div>
+        </article>
+        <article class="chart-panel wide">
+          <div class="panel-title">
+            <h3>Survival Rate by Age Group</h3>
+            <span>Descriptive + Diagnostic</span>
+          </div>
+          <div class="bar-chart horizontal" data-chart="age"></div>
+        </article>
+        <article class="chart-panel wide">
+          <div class="panel-title">
+            <h3>Fare Group Survival Pattern</h3>
+            <span>Diagnostic</span>
+          </div>
+          <div class="bar-chart horizontal" data-chart="fare"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section methods" id="methods">
+      <div class="section-heading">
+        <p class="eyebrow">Methodology</p>
+        <h2>How the notebook was completed</h2>
+      </div>
+
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Inspect</h3>
+          <p>Checked shape, columns, data types, missing values, and duplicate records.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Clean</h3>
+          <p>Filled missing age by sex and class median, filled embarked by mode, and handled cabin gaps.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Engineer</h3>
+          <p>Created FamilySize, IsAlone, AgeGroup, FareGroup, HasCabin, and Deck.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Analyze</h3>
+          <p>Used grouped survival rates, visual charts, and correlation analysis to explain patterns.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section findings">
+      <div class="findings-text">
+        <p class="eyebrow">Key Findings</p>
+        <h2>The strongest survival signals were social and structural.</h2>
+        <p>
+          Female passengers had a much higher survival rate than male passengers. First-class passengers survived
+          at a higher rate than second- and third-class passengers. Higher fare groups and recorded cabin information
+          were also associated with higher survival, but they should be interpreted as related factors rather than
+          direct causes.
+        </p>
+      </div>
+      <div class="insight-list">
+        <article>
+          <strong>74.20%</strong>
+          <span>Female survival rate</span>
+        </article>
+        <article>
+          <strong>18.89%</strong>
+          <span>Male survival rate</span>
+        </article>
+        <article>
+          <strong>62.96%</strong>
+          <span>First-class survival rate</span>
+        </article>
+        <article>
+          <strong>24.24%</strong>
+          <span>Third-class survival rate</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="section-heading">
+        <p class="eyebrow">Visual Archive</p>
+        <h2>Images used in the project website</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/titanic_people.jpg" alt="Titanic launch or shipyard scene.">
+          <figcaption>Shipyard and launch context</figcaption>
+        </figure>
+        <figure>
+          <img src="images/titanic_ship.jpg" alt="Titanic at sea or leaving port.">
+          <figcaption>Titanic at sea or leaving port</figcaption>
+        </figure>
+        <figure>
+          <img src="images/titanic_commander.jpg" alt="Titanic commander and officers.">
+          <figcaption>Commander and officers</figcaption>
+        </figure>
+        <figure>
+          <img src="images/titanic_cabin_survivor.jpg" alt="Titanic lifeboat evacuation illustration.">
+          <figcaption>Lifeboat evacuation illustration</figcaption>
+        </figure>
+        <figure>
+          <img src="images/titanic_movie_poster.jpg" alt="Colorful Titanic movie poster.">
+          <figcaption>Modern cultural memory</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section demo" id="demo">
+      <div>
+        <p class="eyebrow">Final Demo</p>
+        <h2>10-minute walkthrough structure</h2>
+        <p>
+          TITANICISM supports the final video by turning the notebook into a guided story. Each member can speak
+          through one part of the project: dataset, cleaning, descriptive analytics, diagnostic analytics, and conclusion.
+        </p>
+      </div>
+      <div class="demo-steps">
+        <article><span>Member 1</span> Introduction and dataset overview</article>
+        <article><span>Member 2</span> Data cleaning and feature engineering</article>
+        <article><span>Member 3</span> Descriptive analytics charts</article>
+        <article><span>Member 4</span> Diagnostic analytics and correlation</article>
+        <article><span>Member 5</span> Findings, limitations, and conclusion</article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>TITANICISM</strong>
+    <span>Built with HTML, CSS, and JavaScript for the Titanic survival analytics activity.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
