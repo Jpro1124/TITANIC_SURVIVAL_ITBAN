@@ -40,6 +40,16 @@ The objectives of this project are:
 6. Interpret the results in a clear analyst-style report.
 7. Prepare a notebook and final video walkthrough where all members participate.
 
+### 3.1 Project Timeline
+
+| Date | Task |
+|---|---|
+| May 19 | Choose dataset, download, and create notebook. |
+| May 20 | Finish data cleaning and descriptive analytics. |
+| May 21 | Finish diagnostic analytics and charts. |
+| May 22 | Complete documentation and rehearse video. |
+| May 23 | Record demo, review files, and submit before 11:59 PM. |
+
 ## 4. Dataset Description
 
 The dataset used in this project is the Titanic passenger survival dataset. It contains information about passengers aboard the Titanic, including whether they survived.
@@ -339,6 +349,7 @@ NumPy developers. NumPy numerical computing library.
 matplotlib development team. matplotlib visualization library.
 
 seaborn development team. seaborn statistical data visualization library.
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
