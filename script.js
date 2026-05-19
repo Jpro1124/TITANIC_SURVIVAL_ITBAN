@@ -34,8 +34,10 @@ function renderVerticalChart(container, data) {
     const height = Math.max((item.value / max) * 100, 3);
     return `
       <div class="bar-item">
-        <div class="bar-fill" style="--bar-height: ${height}%;">
-          ${formatPercent(item.value)}
+        <div class="bar-plot">
+          <div class="bar-fill" style="--bar-height: ${height}%;">
+            ${formatPercent(item.value)}
+          </div>
         </div>
         <div class="bar-label">${item.label}</div>
       </div>
