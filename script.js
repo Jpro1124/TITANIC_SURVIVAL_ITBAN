@@ -34,7 +34,7 @@ function renderVerticalChart(container, data) {
     const height = Math.max((item.value / max) * 100, 3);
     return `
       <div class="bar-item">
-        <div class="bar-fill" style="height: ${height}%;">
+        <div class="bar-fill" style="--bar-height: ${height}%;">
           ${formatPercent(item.value)}
         </div>
         <div class="bar-label">${item.label}</div>
@@ -70,6 +70,33 @@ document.querySelectorAll("[data-chart]").forEach(container => {
     renderVerticalChart(container, data);
   }
 });
+
+const revealTargets = [
+  ...document.querySelectorAll(".section-heading, .section-grid, .history-card, .metric-card, .chart-panel, .timeline article, .findings-text, .insight-list article, .gallery-grid figure, .demo > div")
+];
+
+revealTargets.forEach((target, index) => {
+  target.classList.add("reveal");
+  target.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("is-visible");
+
+    if (entry.target.classList.contains("chart-panel")) {
+      entry.target.querySelectorAll(".bar-fill").forEach(bar => {
+        bar.classList.add("is-filled");
+      });
+    }
+
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.18 });
+
+revealTargets.forEach(target => observer.observe(target));
 
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
